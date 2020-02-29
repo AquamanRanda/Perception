@@ -4,12 +4,9 @@ from db_utils import create_connection, run_query
 from utils import update_user_token, insert_user, get_user_data, get_topics_data, get_session_token, get_images, \
     get_email, get_word_percent, update_user_image, get_datetime
 import ast
-
-app = Flask(
-    __name__,
-)
-
-
+from flask_cors import CORS
+app = Flask(__name__,)
+CORS(app)
 @app.route("/login", methods=['POST'])
 def login():
     """
